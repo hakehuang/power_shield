@@ -1,0 +1,13 @@
+# This file is provided so that the sample can be compiled using Twister,
+# the Zephyr testing tool.
+sample:
+  description: Power shield sample application demonstrating sensor reading,
+    LED control, and power-aware operation using the power shield module.
+  name: power-shield
+common:
+  build_only: true
+  integration_platforms:
+    - custom_plank
+    - nucleo_f302r8
+tests:
+  sample.power_shield: {}
