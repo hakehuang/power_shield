@@ -16,14 +16,10 @@ common:
 tests:
   sample.drivers.adc.adc_power_shield:
     integration_platforms:
-      - frdm_k64f
-      - frdm_mcxc242
       - frdm_mcxc444
       - mimxrt1040_evk
-      - mimxrt595_evk_cm33
     platform_allow:
       - frdm_k64f
       - frdm_mcxc242
       - frdm_mcxc444
       - mimxrt1040_evk
-      - mimxrt595_evk_cm33
