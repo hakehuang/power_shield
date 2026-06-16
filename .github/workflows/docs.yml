@@ -41,11 +41,11 @@ jobs:
           mv _build_sphinx/html/* deploy
 
       - name: Setup pages
-        if: github.event_name != 'pull_request' && matrix.doxygen-version == '1.14.0'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && matrix.doxygen-version == '1.14.0'
         uses: actions/configure-pages@v4
 
       - name: Upload pages artifact
-        if: github.event_name != 'pull_request' && matrix.doxygen-version == '1.14.0'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && matrix.doxygen-version == '1.14.0'
         uses: actions/upload-pages-artifact@v3
         with:
           path: doc/deploy
@@ -61,7 +61,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-22.04
     needs: build
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       pages: write
       id-token: write

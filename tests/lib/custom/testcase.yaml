@@ -1,4 +1,5 @@
 common:
+  build_only: true
   tags: extensibility
   integration_platforms:
     - custom_plank
