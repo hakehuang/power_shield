@@ -12,7 +12,6 @@ This repository now carries the Zephyr ADC power measurement sample from
   - `frdm_mcxc242`
   - `frdm_mcxc444`
   - `mimxrt1040_evk`
-  - `mimxrt595_evk_cm33`
 - Sample documentation in `app/README.rst`
 - Twister metadata in `app/sample.yaml`
 
@@ -26,6 +25,19 @@ west build -b frdm_mcxc444/mcxc444 app
 
 To try another supported board, replace the board name with one of the boards
 covered by the overlay/config files in `app/boards`.
+
+## CI coverage
+
+The application is included in CI through:
+
+```sh
+west twister -T app --integration
+```
+
+The current integration platforms for this sample are:
+
+- `frdm_mcxc444`
+- `mimxrt1040_evk`
 
 ## Notes
 
